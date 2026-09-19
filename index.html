@@ -205,11 +205,8 @@
             <div class="timer-box"><div class="timer-number" id="seconds">00</div><div class="timer-label">Soniya</div></div>
         </div>
 
-        <!-- Telegram RSVP (Tashrifni tasdiqlash) -->
-        <a href="https://t.me/Vorka_300" target="_blank" class="btn">✉️ TASHRIFNI TASDIQLASH (RSVP)</a>
-
         <!-- Mehmonlarga taklifnoma yuborish uchun Ulashish tugmasi -->
-        <button class="btn btn-outline" onclick="shareInvitation()">📲 TAKLIFNOMANI YUBORISH</button>
+        <button class="btn btn-outline" onclick="shareInvitation()" style="margin-top: 25px;">📲 TAKLIFNOMANI YUBORISH</button>
 
         <p style="font-family: 'Alex Brush', cursive; font-size: 28px; color: #7a1c31; margin-top: 40px;">
             Hurmat bilan, Vorisjon & Madina
@@ -275,7 +272,7 @@
                 url: window.location.href
             };
 
-            if (navigator.share) {
+            if (navigator.navigator && navigator.share) {
                 navigator.share(shareData);
             } else {
                 window.open("https://t.me/share/url?url=" + encodeURIComponent(window.location.href) + "&text=" + encodeURIComponent(shareData.text));
