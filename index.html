@@ -3,34 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madina & Vorisjon — To'yimizga taklifnoma</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <title>Madina & Vorisjon — To'yimizga taklif etamiz!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        * {
-            box-sizing: border-box;
+        * { box-sizing: border-box; }
+        body {
             margin: 0;
             padding: 0;
-        }
-        body {
             background-color: #faf6f0;
             color: #4a2c2a;
             font-family: 'Montserrat', sans-serif;
             text-align: center;
-            line-height: 1.6;
         }
         .container {
             max-width: 450px;
             margin: 0 auto;
-            padding: 40px 20px 80px 20px;
+            padding: 30px 20px;
             background: #fffdf9;
-            box-shadow: 0 0 25px rgba(0,0,0,0.08);
+            box-shadow: 0 0 20px rgba(0,0,0,0.08);
             min-height: 100vh;
             position: relative;
-            border-left: 1px solid #f0e6d8;
-            border-right: 1px solid #f0e6d8;
         }
+
+        /* Musiqa tugmasi */
         .music-btn {
             position: fixed;
             top: 20px;
@@ -39,132 +34,249 @@
             background: #7a1c31;
             color: #fff;
             border: none;
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
-            font-size: 22px;
+            font-size: 20px;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        .ornament {
-            font-size: 24px;
-            color: #c5a059;
-            margin: 15px 0;
+
+        .seal {
+            width: 100px;
+            height: 100px;
+            background-color: #7a1c31;
+            color: #f7e7ce;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Alex Brush', cursive;
+            font-size: 34px;
+            margin: 20px auto;
+            box-shadow: 0 6px 15px rgba(122,28,49,0.3);
+            border: 2px solid #f7e7ce;
         }
-        .subtitle {
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 12px;
-            color: #8c7355;
-            margin-bottom: 10px;
-        }
+
         h1 {
             font-family: 'Alex Brush', cursive;
-            font-size: 48px;
+            font-size: 46px;
             color: #7a1c31;
+            margin: 10px 0 5px 0;
             font-weight: normal;
-            margin: 15px 0;
         }
-        p {
+
+        .date-header {
+            font-size: 13px;
+            letter-spacing: 3px;
+            color: #888;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .message {
             font-size: 15px;
-            color: #5a4b41;
+            line-height: 1.6;
+            margin: 25px 0;
+            color: #5a403d;
+        }
+
+        .section-title {
+            font-family: 'Alex Brush', cursive;
+            font-size: 36px;
+            color: #7a1c31;
+            margin-top: 35px;
             margin-bottom: 15px;
         }
-        .card {
-            background: #fdfaf5;
-            border: 1px solid #f2e3d5;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 25px 0;
+
+        .schedule {
+            text-align: left;
+            margin: 20px 0;
+            padding: 0 10px;
         }
-        .location-title {
-            font-weight: 700;
-            font-size: 18px;
-            color: #4a2c2a;
-            margin-top: 10px;
-        }
-        .location-address {
+
+        .schedule-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px dashed #e0d0c1;
             font-size: 14px;
-            color: #777;
-            margin-bottom: 20px;
         }
-        .btn-map {
+
+        /* Tugmalar */
+        .btn {
             display: inline-block;
+            width: 100%;
             background-color: #7a1c31;
             color: #ffffff !important;
-            padding: 14px 28px;
+            padding: 14px 20px;
             border-radius: 30px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            box-shadow: 0 4px 12px rgba(122, 28, 49, 0.3);
-            transition: all 0.3s ease;
-        }
-        .btn-map:hover {
-            background-color: #5c1424;
-        }
-        .footer-text {
-            font-style: italic;
             font-size: 13px;
-            color: #999;
-            margin-top: 30px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-top: 12px;
+            box-shadow: 0 4px 10px rgba(122,28,49,0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #7a1c31 !important;
+            border: 2px solid #7a1c31;
+        }
+
+        /* Taymer */
+        .timer {
+            display: flex;
+            justify-content: space-between;
+            margin: 25px 0;
+        }
+
+        .timer-box {
+            background: #f7f0e8;
+            padding: 12px 5px;
+            border-radius: 12px;
+            width: 22%;
+        }
+
+        .timer-number {
+            font-size: 22px;
+            font-weight: bold;
+            color: #7a1c31;
+        }
+
+        .timer-label {
+            font-size: 11px;
+            color: #777;
+            margin-top: 4px;
         }
     </style>
 </head>
 <body>
-    <!-- Musiqa tugmasi -->
-    <button class="music-btn" id="musicToggle" onclick="toggleMusic()">🎵</button>
+
+    <!-- Musiqa yoqish tugmasi -->
+    <button class="music-btn" onclick="toggleMusic()" id="musicToggle">🎵</button>
     <audio id="bgMusic" loop preload="auto">
         <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg">
     </audio>
 
     <div class="container">
-        <div class="subtitle">To'y Taklifnomasi</div>
-        <div class="ornament">❖ ❦ ❖</div>
-        <h1>Madina & Vorisjon</h1>
-        <p>Sizni aziz va qadrli mehmonimiz sifatida baxtli kunimiz — nikoh to'yimizga lutfan taklif etamiz!</p>
+        <!-- Muhr -->
+        <div class="seal">M & V</div>
 
-        <div class="card">
-            <div class="subtitle">Manzil va Mo'ljal</div>
-            <div class="location-title">Samarqand Trikotaj Fabrikasi</div>
-            <div class="location-address">Samarqand shahri</div>
-            
-            <a href="https://yandex.uz/maps/?text=Samarqand+Trikotajnaya+fabrika" target="_blank" class="btn-map">📍 XARITANI OCHISH</a>
+        <!-- Ismlar -->
+        <h1>Madina & Vorisjon</h1>
+        <div class="date-header">12 OKTABR | 2026</div>
+
+        <!-- Taklif matni -->
+        <p class="message">
+            <strong>Qadrli mehmonlar!</strong><br><br>
+            Sizni hayotimizdagi eng baxtli va quvonchli kunni biz bilan birga nishonlashga hamda oilaviy tariximiz boshlanishining guvohi bo'lishga taklif etamiz.
+        </p>
+
+        <!-- Kun tartibi -->
+        <div class="section-title">Kun tartibi</div>
+        <div class="schedule">
+            <div class="schedule-item"><span>18:00</span><span>MEHMONLARNI KUTIB OLISH</span></div>
+            <div class="schedule-item"><span>18:30</span><span>ZIYOFAT VA RAQS</span></div>
+            <div class="schedule-item"><span>20:30</span><span>SHIRINLIKLAR</span></div>
         </div>
 
-        <div class="ornament">❖ ❦ ❖</div>
-        <p class="footer-text">Tashrifingizdan boshimiz osmonga yetadi!</p>
+        <!-- Manzil -->
+        <div class="section-title">Manzil</div>
+        <p style="margin: 5px 0;"><strong>"Grand Sabina" to'yxonasi</strong></p>
+        <p style="font-size: 13px; color: #666; margin-bottom: 15px;">Mo'ljal: Trikotajka chorrahasida</p>
+        <a href="https://yandex.uz/maps/?text=Samarqand+Trikotajnaya+fabrika" target="_blank" class="btn">📍 XARITADA OCHISH</a>
+
+        <!-- Kalendarga saqlash -->
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Madina+%26+Vorisjon+To'yi&dates=20261012T130000Z/20261012T170000Z&details=To'yimizga+taklif+etamiz!&location=Grand+Sabina+Samarqand" target="_blank" class="btn btn-outline">📅 KALENDARGA SAQLASH</a>
+
+        <!-- Ortga hisoblash -->
+        <div class="section-title">To'yimizgacha qoldi:</div>
+        <div class="timer">
+            <div class="timer-box"><div class="timer-number" id="days">00</div><div class="timer-label">Kun</div></div>
+            <div class="timer-box"><div class="timer-number" id="hours">00</div><div class="timer-label">Soat</div></div>
+            <div class="timer-box"><div class="timer-number" id="minutes">00</div><div class="timer-label">Daqiqa</div></div>
+            <div class="timer-box"><div class="timer-number" id="seconds">00</div><div class="timer-label">Soniya</div></div>
+        </div>
+
+        <!-- Telegram RSVP (Tashrifni tasdiqlash) -->
+        <a href="https://t.me/Vorka_300" target="_blank" class="btn">✉️ TASHRIFNI TASDIQLASH (RSVP)</a>
+
+        <!-- Mehmonlarga taklifnoma yuborish uchun Ulashish tugmasi -->
+        <button class="btn btn-outline" onclick="shareInvitation()">📲 TAKLIFNOMANI YUBORISH</button>
+
+        <p style="font-family: 'Alex Brush', cursive; font-size: 28px; color: #7a1c31; margin-top: 40px;">
+            Hurmat bilan, Madina & Vorisjon
+        </p>
     </div>
 
     <script>
-        var music = document.getElementById("bgMusic");
-        var btn = document.getElementById("musicToggle");
-        var isPlaying = false;
+        // Taymer skripti (12-oktabr 2026, 18:00)
+        const weddingDate = new Date("Oct 12, 2026 18:00:00").getTime();
+        
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
 
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("days").innerText = "0";
+                document.getElementById("hours").innerText = "0";
+                document.getElementById("minutes").innerText = "0";
+                document.getElementById("seconds").innerText = "0";
+                return;
+            }
+
+            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+        }, 1000);
+
+        // Musiqa yoqish / o'chirish
         function toggleMusic() {
-            if (isPlaying) {
-                music.pause();
-                btn.innerHTML = "🎵";
-                isPlaying = false;
+            const audio = document.getElementById("bgMusic");
+            const btn = document.getElementById("musicToggle");
+            if (audio.paused) {
+                audio.play();
+                btn.innerText = "🔊";
             } else {
-                music.play();
-                btn.innerHTML = "🔊";
-                isPlaying = true;
+                audio.pause();
+                btn.innerText = "🎵";
             }
         }
 
         // Ekran bir marta bosilganda musiqani ishga tushirish
         document.addEventListener('click', function() {
-            if (!isPlaying) {
-                music.play().then(() => {
-                    btn.innerHTML = "🔊";
-                    isPlaying = true;
+            const audio = document.getElementById("bgMusic");
+            const btn = document.getElementById("musicToggle");
+            if (audio.paused) {
+                audio.play().then(() => {
+                    btn.innerText = "🔊";
                 }).catch(() => {});
             }
         }, { once: true });
+
+        // Ulashish (Share) funksiyasi
+        function shareInvitation() {
+            const shareData = {
+                title: "Madina & Vorisjon — To'y taklifnomasi",
+                text: "Sizni to'yimizga taklif etamiz! 💍✨ Taklifnomani ko'rish uchun havolani bosing:",
+                url: window.location.href
+            };
+
+            if (navigator.share) {
+                navigator.share(shareData);
+            } else {
+                window.open("https://t.me/share/url?url=" + encodeURIComponent(window.location.href) + "&text=" + encodeURIComponent(shareData.text));
+            }
+        }
     </script>
 </body>
 </html>
