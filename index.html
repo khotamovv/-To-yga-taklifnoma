@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madina & Vorisjon — To'yimizga taklif etamiz!</title>
+    <title>Vorisjon & Madina — To'yimizga taklif etamiz!</title>
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; }
@@ -161,16 +161,16 @@
 
     <!-- Musiqa yoqish tugmasi -->
     <button class="music-btn" onclick="toggleMusic()" id="musicToggle">🎵</button>
-    <audio id="bgMusic" loop preload="auto">
+    <audio id="bgMusic" loop autoplay preload="auto">
         <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg">
     </audio>
 
     <div class="container">
         <!-- Muhr -->
-        <div class="seal">M & V</div>
+        <div class="seal">V & M</div>
 
         <!-- Ismlar -->
-        <h1>Madina & Vorisjon</h1>
+        <h1>Vorisjon & Madina</h1>
         <div class="date-header">12 OKTABR | 2026</div>
 
         <!-- Taklif matni -->
@@ -194,7 +194,7 @@
         <a href="https://yandex.uz/maps/?text=Samarqand+Trikotajnaya+fabrika" target="_blank" class="btn">📍 XARITADA OCHISH</a>
 
         <!-- Kalendarga saqlash -->
-        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Madina+%26+Vorisjon+To'yi&dates=20261012T130000Z/20261012T170000Z&details=To'yimizga+taklif+etamiz!&location=Grand+Sabina+Samarqand" target="_blank" class="btn btn-outline">📅 KALENDARGA SAQLASH</a>
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Vorisjon+%26+Madina+To'yi&dates=20261012T130000Z/20261012T170000Z&details=To'yimizga+taklif+etamiz!&location=Grand+Sabina+Samarqand" target="_blank" class="btn btn-outline">📅 KALENDARGA SAQLASH</a>
 
         <!-- Ortga hisoblash -->
         <div class="section-title">To'yimizgacha qoldi:</div>
@@ -212,7 +212,7 @@
         <button class="btn btn-outline" onclick="shareInvitation()">📲 TAKLIFNOMANI YUBORISH</button>
 
         <p style="font-family: 'Alex Brush', cursive; font-size: 28px; color: #7a1c31; margin-top: 40px;">
-            Hurmat bilan, Madina & Vorisjon
+            Hurmat bilan, Vorisjon & Madina
         </p>
     </div>
 
@@ -239,10 +239,25 @@
             document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
         }, 1000);
 
-        // Musiqa yoqish / o'chirish
+        // Musiqani avtomatik ijro etish funksiyasi
+        const audio = document.getElementById("bgMusic");
+        const btn = document.getElementById("musicToggle");
+
+        function startAudio() {
+            if (audio.paused) {
+                audio.play().then(() => {
+                    btn.innerText = "🔊";
+                }).catch(() => {});
+            }
+        }
+
+        // Har qanday teginish yoki skroll bo'lganda musiqani ishga tushirish
+        ['click', 'touchstart', 'scroll', 'keydown'].forEach(function(evt) {
+            document.addEventListener(evt, startAudio, { once: true });
+        });
+
+        // Musiqa yoqish / o'chirish tugmasi
         function toggleMusic() {
-            const audio = document.getElementById("bgMusic");
-            const btn = document.getElementById("musicToggle");
             if (audio.paused) {
                 audio.play();
                 btn.innerText = "🔊";
@@ -252,21 +267,10 @@
             }
         }
 
-        // Ekran bir marta bosilganda musiqani ishga tushirish
-        document.addEventListener('click', function() {
-            const audio = document.getElementById("bgMusic");
-            const btn = document.getElementById("musicToggle");
-            if (audio.paused) {
-                audio.play().then(() => {
-                    btn.innerText = "🔊";
-                }).catch(() => {});
-            }
-        }, { once: true });
-
         // Ulashish (Share) funksiyasi
         function shareInvitation() {
             const shareData = {
-                title: "Madina & Vorisjon — To'y taklifnomasi",
+                title: "Vorisjon & Madina — To'y taklifnomasi",
                 text: "Sizni to'yimizga taklif etamiz! 💍✨ Taklifnomani ko'rish uchun havolani bosing:",
                 url: window.location.href
             };
